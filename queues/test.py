@@ -19,12 +19,22 @@ print(queue)
 queue.enqueue('F') # Queue Overflow
 queue.enqueue('G') # Queue Overflow
 
+#Search
+print('Search, key = D', queue.search("D"))
+print('Search, key = H', queue.search("H"))
+
+#Peek
+print(queue)
+print('Peek:', queue.peek())
+
 # Dequeues
 queue.dequeue()
 print(queue)
 queue.dequeue()
 print(queue)
 queue.dequeue()
+print(queue)
+print('Peek:', queue.peek())
 print(queue)
 queue.dequeue()
 print(queue)

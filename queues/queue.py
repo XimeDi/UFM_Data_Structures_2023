@@ -67,3 +67,21 @@ class LinearQueue:
         self.elements[self.front] = None # (Optional)
         self.front += 1
         return value
+
+
+    def search(self, key: str) -> str: #Search
+
+        for i in range(self.front, self.rear + 1):
+            if self.elements[i] == key:
+                return i
+
+        return -1
+
+
+    def peek(self) -> str:
+
+        if self.front == self.rear:
+            return 'Queue is empty'
+        
+        value = self.elements[self.front]
+        return value
