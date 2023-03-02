@@ -184,3 +184,23 @@ class LinkedList:
             previous_node = current_node
 
         print('Reference node {} not found in linked list...'.format(reference_node))
+<<<<<<< Updated upstream
+=======
+
+
+    def search(self, key: str) -> str:
+
+        current_node = self.start
+        i = 0
+
+        for current_node in self:
+
+            if current_node.data == key:
+                return i
+            else:
+                i = i+1
+                current_node = current_node
+
+        if current_node.data != key:
+            return -1
+>>>>>>> Stashed changes

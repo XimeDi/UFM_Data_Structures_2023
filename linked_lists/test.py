@@ -43,6 +43,12 @@ node_h = Node('H')
 ll.insert_before('E', node_h)
 print(ll)
 
+<<<<<<< Updated upstream
+=======
+print('Search, key = C', ll.search("C"))
+print('Search, key = J', ll.search("J"))
+
+>>>>>>> Stashed changes
 # Delete a given node
 ll.delete('E')
 print(ll)
