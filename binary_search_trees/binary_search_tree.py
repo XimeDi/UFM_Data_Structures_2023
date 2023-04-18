@@ -1,5 +1,14 @@
 '''
 Binary Search Tree
+
+Module imlplements a binary search tree and include the classes:
+Search
+Traverse
+Find Minimum
+Find Maximum
+Insert
+Delete
+
 '''
 
 class Node:
@@ -96,3 +105,42 @@ class BinarySearchTree:
             subtree = subtree.right_child
 
         return subtree
+    
+
+    def delete_node(self, key: int, subtree: Node):
+
+        if self.root is None:
+            print("Tree is already empty")
+            return None
+        
+        else: 
+            self.root = self._delete_node(key, subtree)
+
+
+    def _delete_node(self, key: int, subtree: Node) -> Node: 
+
+        if key < subtree.data:
+            subtree.left_child = self._delete_node(key, subtree.left_child)
+
+        elif key > subtree.data:
+            subtree.right_child = self._delete_node(key, subtree.right_child)
+
+        else:
+            if subtree.left_child is None:
+                temp = subtree.right_child
+                subtree = None
+                return temp
+
+            elif subtree.right_child is None:
+                temp = subtree.left_child
+                subtree = None
+                return temp
+
+            temp = self.find_min(subtree.right_child)
+            subtree.data = temp.data
+            subtree.right_child = self._delete_node(temp.data, subtree.right_child)
+
+        return subtree
+
+    
+
